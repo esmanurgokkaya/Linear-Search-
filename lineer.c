@@ -1,44 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// lineer search yapabilmek için gerekli fonksiyonu tanımlanıyor
+// lineer search yapabilmek iÃ§in gerekli fonksiyonu tanÄ±mlanÄ±yor
 int lineerSearch(int dizi[], int boyut, int deger){
 	int i;
 	
-	for(i = 0 ; i < boyut ; i++){		// bu kısımda dizinin her elemanı gezilerek kontrol yapılıyor
+	for(i = 0 ; i < boyut ; i++){		// bu kÄ±sÄ±mda dizinin her elemanÄ± gezilerek kontrol yapÄ±lÄ±yor
 		if(dizi[i] == deger){
 			return i;
 		}
 	}
 	
-	return -1 ; // eğer sayı bulunmuyorsa -1 döndürülüyor ve else gidiyor
+	return -1 ; // eÄŸer sayÄ± bulunmuyorsa -1 dÃ¶ndÃ¼rÃ¼lÃ¼yor ve else gidiyor
 }
 
 
-int main(int argc, char *argv[]) {
-	// gerekli değişkenleri tanımlanıyor
+int main() {
+	// gerekli deÄŸiÅŸkenleri tanÄ±mlanÄ±yor
 	int boyut, aranan,i;
-	// kullanıcıya gerekli bildirimler yapılıyor
+	// kullanÄ±cÄ±ya gerekli bildirimler yapÄ±lÄ±yor
 	printf("**********GIRILEN DIZIDE ISTENILEN ELEMANI BULMA**********\n\n");
-	// kullanıcının gireceği dizinin boyutu isteniyor
+	// kullanÄ±cÄ±nÄ±n gireceÄŸi dizinin boyutu isteniyor
 	printf("Gireceginiz dizinin eleman sayisini giriniz\n");
 	scanf("%d",&boyut);
-	// alınan boyuta göre dizi tanımlanıyor
+	// alÄ±nan boyuta gÃ¶re dizi tanÄ±mlanÄ±yor
 	int sayilar[boyut];
 
 	printf("Dizinin elemanlarini giriniz\n");
-	// kullanıcıdan dizinin elemanları alınıyor
+	// kullanÄ±cÄ±dan dizinin elemanlarÄ± alÄ±nÄ±yor
 	for (i = 0 ; i < boyut ; i++){
 		printf("%d. eleman --> ",i+1);
 		scanf("%d", &sayilar[i]);
 		
 	} 
-	// dizide aranacak eleman kullanıcıdan isteniyor  
+	// dizide aranacak eleman kullanÄ±cÄ±dan isteniyor  
 	printf("\nGirilen dizide aramak istediginiz elemani giriniz\n");
 	scanf("%d",&aranan);
-	// alınan  değer fonksiyona diğer değerlerle eklenerek arama yaptırılıyor ve bir değişkene aktarılıyor
+	// alÄ±nan  deÄŸer fonksiyona diÄŸer deÄŸerlerle eklenerek arama yaptÄ±rÄ±lÄ±yor ve bir deÄŸiÅŸkene aktarÄ±lÄ±yor
 	int sonuc = lineerSearch(sayilar,boyut,aranan);
-	// fonksiyondan gelen değere göre if kontrolu yapılır ve gerekli çıktılar gösterilir
+	// fonksiyondan gelen deÄŸere gÃ¶re if kontrolu yapÄ±lÄ±r ve gerekli Ã§Ä±ktÄ±lar gÃ¶sterilir
 	if (sonuc >= 0 ){
 		printf("\nAradiginiz sayi dizinin %d. sirasinda bulunmaktadir\n",sonuc+1);
 	}
